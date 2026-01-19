@@ -1,0 +1,9 @@
+<h1>Complaints</h1>
+
+<ul>
+{% for complaint in complaints %}
+    <li>
+        <strong>{{ complaint.name }}</strong>: {{ complaint.message }}
+    </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint</title>
+</head>
+<body>
+
+<h1>Complaint form</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Name" required><br><br>
+
+    <textarea name="message" placeholder="Message" required></textarea><br><br>
+
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>
