@@ -1,5 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaints list</title>
+    <link rel="stylesheet" href="{% static 'complaints/css/style2.css' %}">
+</head>
 <h1>Complaints</h1>
-
+<div class="container">
+    <div class="container__form container--signin">
+        <form method="post" class="form">
+            {% csrf_token %}
 <ul>
 {% for complaint in complaints %}
     <li>
@@ -7,3 +17,5 @@
     </li>
 {% endfor %}
 </ul>
+        </form>
+    </div>

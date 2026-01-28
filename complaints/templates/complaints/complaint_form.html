@@ -1,21 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Complaint</title>
+    <link rel="stylesheet" href="{% static 'complaints/css/style.css' %}">
 </head>
 <body>
+<div class="container">
+    <div class="container__form container--signin">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <h2 class="form__title">Complaint Form</h2>
+            <input type="text" name="name" placeholder="Name" class="input" required>
+            <textarea name="message" placeholder="Message" class="input" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
 
-<h1>Complaint form</h1>
-
-<form method="post">
-    {% csrf_token %}
-
-    <input type="text" name="name" placeholder="Name" required><br><br>
-
-    <textarea name="message" placeholder="Message" required></textarea><br><br>
-
-    <button type="submit">Send</button>
-</form>
 
 </body>
 </html>
