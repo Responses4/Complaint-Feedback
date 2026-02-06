@@ -70,4 +70,8 @@ def complaint_list(request):
 def success(request):
     return render(request, 'complaints/success.html')
 
-
+def complaint_detail(request, pk):
+    complaint = get_object_or_404(Complaint, pk=pk)
+    return render(request, 'complaints/complaint_detail.html', {
+        'complaint': complaint
+    })
