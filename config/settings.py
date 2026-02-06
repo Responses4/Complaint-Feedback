@@ -20,6 +20,10 @@ DEBUG = False   # 🔴 ДЛЯ ДЕПЛОЯ
 
 ALLOWED_HOSTS = ['*']  # 🔴 ДЛЯ ДЕПЛОЯ
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://complaint-feedback.onrender.com",
+]
+
 # =========================
 # APPLICATIONS
 # =========================
