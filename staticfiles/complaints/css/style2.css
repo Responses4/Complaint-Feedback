@@ -1,0 +1,88 @@
+  /* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, sans-serif;
+}
+
+/* ===== PAGE ===== */
+body {
+    background: #f6f7fb;
+    color: #1f2937;
+    padding: 40px 20px;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* ===== WRAPPER ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.container__form {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== TABLE ===== */
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* ===== HEADER ===== */
+.complaints-table thead th {
+    background: #f3f4f6;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+/* ===== CELLS ===== */
+.complaints-table td {
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+
+/* ===== COLUMN WIDTHS ===== */
+.complaints-table th:nth-child(1),
+.complaints-table td:nth-child(1) {
+    width: 60px;
+    text-align: center;
+}
+
+.complaints-table th:nth-child(2),
+.complaints-table td:nth-child(2) {
+    width: 220px;
+}
+
+.complaints-table th:nth-child(3),
+.complaints-table td:nth-child(3) {
+    word-break: break-word;
+}
+
+/* ===== HOVER ===== */
+.complaints-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* ===== EMPTY ===== */
+.complaints-table td[colspan] {
+    text-align: center;
+    color: #9ca3af;
+    padding: 20px;
+}
