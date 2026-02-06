@@ -10,4 +10,12 @@ class CategoryAdmin(admin.ModelAdmin):
 class ComplaintAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'priority', 'status')
     list_filter = ('category', 'priority', 'status')
-    search_fields = ('name', 'message')
+    search_fields = ('name', 'message', 'admin_response')
+    fields = (
+        'name',
+        'message',
+        'category',
+        'priority',
+        'status',
+        'admin_response',
+    )

@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =========================
 SECRET_KEY = 'django-insecure-@lcli3$p^8(arc3m@891y6u2-cad&^#!)7uv69m$)9hzyh)mf='
 
-DEBUG = False   # 🔴 ДЛЯ ДЕПЛОЯ
+DEBUG = True   # 🔴 ДЛЯ ДЕПЛОЯ
 
 ALLOWED_HOSTS = [
     "complaint-feedback.onrender.com",
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # =========================
 # DEFAULT PRIMARY KEY

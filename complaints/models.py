@@ -42,6 +42,11 @@ class Complaint(models.Model):
         default='open'
     )
 
+    admin_response = models.TextField(
+        blank=True,
+        null=True
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
