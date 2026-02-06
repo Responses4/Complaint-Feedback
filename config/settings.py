@@ -18,7 +18,11 @@ SECRET_KEY = 'django-insecure-@lcli3$p^8(arc3m@891y6u2-cad&^#!)7uv69m$)9hzyh)mf=
 
 DEBUG = False   # 🔴 ДЛЯ ДЕПЛОЯ
 
-ALLOWED_HOSTS = ['*']  # 🔴 ДЛЯ ДЕПЛОЯ
+ALLOWED_HOSTS = [
+    "complaint-feedback.onrender.com",
+    "127.0.0.1",
+    "localhost",
+] # 🔴 ДЛЯ ДЕПЛОЯ
 
 CSRF_TRUSTED_ORIGINS = [
     "https://complaint-feedback.onrender.com",
