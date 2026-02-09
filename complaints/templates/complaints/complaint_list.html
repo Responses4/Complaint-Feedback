@@ -1,53 +1,70 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Complaints list</title>
-
-    {% load static %}
     <link rel="stylesheet" href="{% static 'complaints/css/style2.css' %}">
-
 </head>
 <body>
+
 <h1>Complaints</h1>
 
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Message</th>
+            <th>File</th>
+            <th>Reply</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
 
-<div class="container">
-    <div class="container__form container--signin">
-        <form method="post" class="form">
-            {% csrf_token %}
+    <tbody>
+    {% for complaint in complaints %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
 
-            <table class="complaints-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Message</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for complaint in complaints %}
-                    <tr>
-    <td>{{ forloop.counter }}</td>
+            <td>
+                <a href="{% url 'complaints:complaint_detail' complaint.id %}">
+                    {{ complaint.name }}
+                </a>
+            </td>
 
-    <td>
-        <a href="{% url 'complaint_detail' complaint.id %}" class="user-link">
-            {{ complaint.name }}
+            <td>{{ complaint.message }}</td>
+
+            <td>
+                {% if complaint.file %}
+                    <a href="{{ complaint.file.url }}" target="_blank">Open</a>
+                {% else %}
+                    No file
+                {% endif %}
+            </td>
+
+            <td>
+                {{ complaint.reply|default:"No reply yet" }}
+            </td>
+        <td>
+            <a href="{% url 'complaints:reply' complaint.id %}">
+            {% if complaint.reply %}
+                Edit reply
+            {% else %}
+                Reply
+                {% endif %}
         </a>
-    </td>
+</td>
 
-    <td>{{ complaint.message }}</td>
-</tr>
-                    {% empty %}
-                    <tr>
-                        <td colspan="3">No complaints yet.</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+           
+        </tr>
+    {% empty %}
+        <tr>
+            <td colspan="6">No complaints yet</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
-        </form>
-    </div>
-</div>
 </body>
 </html>

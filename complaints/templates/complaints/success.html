@@ -1,6 +1,6 @@
 {% extends 'complaints/base.html' %}
 
 {% block content %}
-    <h2>Complaint sent successfully ✅</h2>
-    <a href="{% url 'complaint_form' %}">Send another</a>
+<h2>Complaint sent successfully ✅</h2>
+<a href="{% url 'complaints:complaint_form' %}">Send another</a>
 {% endblock %}

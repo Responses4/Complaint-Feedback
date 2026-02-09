@@ -9,7 +9,6 @@ class Category(models.Model):
 
 
 class Complaint(models.Model):
-
     PRIORITY_CHOICES = [
         ('low', 'Low'),
         ('medium', 'Medium'),
@@ -24,6 +23,7 @@ class Complaint(models.Model):
 
     name = models.CharField(max_length=100)
     message = models.TextField()
+    reply = models.TextField(blank=True, null=True)
 
     category = models.ForeignKey(
         Category,
@@ -40,6 +40,17 @@ class Complaint(models.Model):
         max_length=20,
         choices=STATUS_CHOICES,
         default='open'
+    )
+
+    reply = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    file = models.FileField(
+        upload_to='complaints/',
+        blank=True,
+        null=True
     )
 
     created_at = models.DateTimeField(auto_now_add=True)

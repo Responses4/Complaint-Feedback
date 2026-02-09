@@ -1,34 +1,21 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Complaint detail</title>
-    <link rel="stylesheet" href="{% static 'complaints/css/style2.css' %}">
-</head>
-<body>
+{% extends 'complaints/base.html' %}
 
+{% block content %}
 <h1>Complaint detail</h1>
 
-<div class="container">
-    <div class="container__form">
-        <table class="complaints-table">
-            <tr>
-                <th>Name</th>
-                <td>{{ complaint.name }}</td>
-            </tr>
-            <tr>
-                <th>Message</th>
-                <td>{{ complaint.message }}</td>
-            </tr>
-        </table>
+<div class="card">
+    <p><strong>Name:</strong> {{ complaint.name }}</p>
+    <p><strong>Message:</strong> {{ complaint.message }}</p>
 
-        <br>
+    <hr>
 
-        <a href="{% url 'complaint_list' %}" class="user-link">
-            ← Back to list
-        </a>
-    </div>
+    <h3>Reply</h3>
+    {% if complaint.reply %}
+        <p class="reply">{{ complaint.reply }}</p>
+    {% else %}
+        <p class="no-reply">No reply yet</p>
+    {% endif %}
 </div>
 
-</body>
-</html>
+<a href="{% url 'complaints:complaint_list' %}" class="back-link">← Back</a>
+{% endblock %}

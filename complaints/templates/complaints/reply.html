@@ -1,0 +1,9 @@
+<h2>Reply to Complaint #{{ complaint.id }} from {{ complaint.name }}</h2>
+
+<p><strong>Original message:</strong> {{ complaint.message }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="message" placeholder="Enter your reply">{{ complaint.reply }}</textarea>
+    <button type="submit">Send Reply</button>
+</form>

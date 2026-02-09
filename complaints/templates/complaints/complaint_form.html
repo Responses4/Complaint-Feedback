@@ -1,22 +1,35 @@
 {% load static %}
+
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Complaint</title>
     <link rel="stylesheet" href="{% static 'complaints/css/style.css' %}">
 </head>
 <body>
+
 <div class="container">
     <div class="container__form container--signin">
-        <form method="post" class="form">
-            {% csrf_token %}
-            <h2 class="form__title">Complaint Form</h2>
-            <input type="text" name="name" placeholder="Name" class="input" required>
-            <textarea name="message" placeholder="Message" class="input" required></textarea>
-            <button type="submit" class="btn">Send</button>
-        </form>
-    </div>
 
+```
+    <!-- ФОРМА С ФАЙЛОМ -->
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        <h2 class="form__title">Complaint Form</h2>
+
+        <input type="text" name="name" placeholder="Name" class="input" required>
+        <textarea name="message" placeholder="Message" class="input" required></textarea>
+
+        <!-- ДОБАВИЛИ ПРИКРЕПЛЕНИЕ -->
+        <input type="file" name="file" class="input">
+
+        <button type="submit" class="btn">Send</button>
+    </form>
+
+</div>
+
+</div>
 
 </body>
 </html>
