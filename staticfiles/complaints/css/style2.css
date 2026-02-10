@@ -104,3 +104,46 @@ a {
     color: #777;
     font-size: 16px;
 }
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.reply-form {
+    margin-top: 20px;
+}
+
+.reply-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.reply-form button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reply-form button:hover {
+    background: #125aa3;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #1976d2;
+}

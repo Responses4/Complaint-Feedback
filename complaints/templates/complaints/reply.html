@@ -1,9 +1,31 @@
-<h2>Reply to Complaint #{{ complaint.id }} from {{ complaint.name }}</h2>
+{% extends 'complaints/base.html' %}
+{% load static %}
 
-<p><strong>Original message:</strong> {{ complaint.message }}</p>
+{% block content %}
+<div class="card">
 
-<form method="POST">
-    {% csrf_token %}
-    <textarea name="message" placeholder="Enter your reply">{{ complaint.reply }}</textarea>
-    <button type="submit">Send Reply</button>
-</form>
+    <h2>Reply to Complaint #{{ complaint.id }}</h2>
+
+    <p><strong>Name:</strong> {{ complaint.name }}</p>
+    <p><strong>Original message:</strong></p>
+    <p class="message">{{ complaint.message }}</p>
+
+    <form method="POST" class="reply-form">
+        {% csrf_token %}
+
+        <label for="message">Your reply</label>
+        <textarea
+            name="message"
+            id="message"
+            placeholder="Enter your reply"
+        >{{ complaint.reply }}</textarea>
+
+        <button type="submit" class="btn">Send Reply</button>
+    </form>
+
+    <a href="{% url 'complaints:complaint_list' %}" class="back-link">
+        ← Back to list
+    </a>
+
+</div>
+{% endblock %}
