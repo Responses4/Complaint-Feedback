@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get(
     "django-insecure-change-this-later"
 )
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
