@@ -21,7 +21,7 @@ class Complaint(models.Model):
         ('closed', 'Closed'),
     ]
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100) // models 
     message = models.TextField()
     reply = models.TextField(blank=True, null=True)
 
